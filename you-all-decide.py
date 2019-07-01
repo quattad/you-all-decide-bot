@@ -42,8 +42,8 @@ def input2str(user_data):
 def add_places(bot, update, user_data):
     text = update.message.text
     update.message.reply_text(
-        "Sure, we can add a new place! \n" 
-        "Send over the name of your place!"
+        "Sure, we can add a new place! \n"
+        "Send over the name of your new place!"
     )
 
     return TYPING_REPLY
@@ -79,8 +79,8 @@ def received_information(bot, update, user_data):
 def generate_place(bot, update, user_data):
 
     if user_data is None:
-        update.message.reply.text("You haven't entered any places!\n"
-                                  "Please add some places using the Add Place button\n")
+        update.message.reply.text("You haven't entered any places! \n"
+                                  "Please add some places using the Add Place button! \n")
         return CHOOSING
     else:
         output = []
@@ -90,7 +90,6 @@ def generate_place(bot, update, user_data):
                 output = user_data[key]
 
         random_choice = output[random.randint(0, len(output)-1)]
-        print(random_choice)
 
         update.message.reply_text("The randomly generated place is: \n \n"
                                   "*** {} *** \n \n"
